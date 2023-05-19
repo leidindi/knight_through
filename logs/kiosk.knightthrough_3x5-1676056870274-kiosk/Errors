@@ -1,0 +1,10 @@
+LOG 1676056870295 [L9]: <ERR> (in GamePlayer) Got start message while already busy playing a game: ignoring.
+LOG 1676056870301 [L9]: <ERR> (in GamePlayer) Got play message not intended for current game: ignoring.
+LOG 1676056870306 [L9]: <ERR> (in GamePlayer) Got play message not intended for current game: ignoring.
+LOG 1676056870324 [L9]: <ERR> (in GamePlayer) Got play message not intended for current game: ignoring.
+LOG 1676056870329 [L9]: <ERR> (in GamePlayer) Got play message not intended for current game: ignoring.
+LOG 1676056870334 [L9]: <ERR> (in GamePlayer) Got play message not intended for current game: ignoring.
+LOG 1676056870339 [L9]: <ERR> (in GamePlayer) Got play message not intended for current game: ignoring.
+LOG 1676056870344 [L9]: <ERR> (in GamePlayer) Got play message not intended for current game: ignoring.
+LOG 1676056870349 [L9]: <ERR> (in GamePlayer) Got play message not intended for current game: ignoring.
+LOG 1676056870356 [L9]: <ERR> (in GamePlayer) Got stop message not intended for current game: ignoring.

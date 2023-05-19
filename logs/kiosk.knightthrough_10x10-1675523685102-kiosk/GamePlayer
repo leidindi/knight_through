@@ -1,0 +1,214 @@
+LOG 1675523685104 [L0]: [Sent at 1675523685104] busy
+LOG 1675523685120 [L0]: [Received at 1675523685119] ( START kiosk.knightthrough_10x10-1675523685102 white (( role white ) ( role black ) ( succ 1 2 ) ( succ 2 3 ) ( succ 3 4 ) ( succ 4 5 ) ( succ 5 6 ) ( succ 6 7 ) ( succ 7 8 ) ( succ 8 9 ) ( succ 9 10 ) ( smallereq 1 10 ) ( <= ( smallereq 1 ?y ) ( succ ?y ?z ) ) ( <= ( smallereq ?x ?y ) ( succ ?x1 ?x ) ( succ ?y1 ?y ) ( smallereq ?x1 ?y1 ) ) ( <= ( xcoord ?x ) ( width ?w ) ( smallereq ?x ?w ) ) ( <= ( ycoord ?y ) ( height ?h ) ( smallereq ?y ?h ) ) ( <= ( forward white ?y1 ?y2 ) ( succ ?y1 ?y2 ) ( ycoord ?y2 ) ) ( <= ( forward black ?y1 ?y2 ) ( succ ?y2 ?y1 ) ( ycoord ?y1 ) ) ( <= ( neighbor ?x1 ?x2 ) ( succ ?x1 ?x2 ) ( xcoord ?x2 ) ) ( <= ( neighbor ?x1 ?x2 ) ( succ ?x2 ?x1 ) ( xcoord ?x1 ) ) ( <= ( secondneighbor ?x1 ?x2 ) ( succ ?x1 ?x3 ) ( succ ?x3 ?x2 ) ( xcoord ?x2 ) ) ( <= ( secondneighbor ?x1 ?x2 ) ( succ ?x3 ?x1 ) ( succ ?x2 ?x3 ) ( xcoord ?x2 ) ) ( <= ( cell ?x ?y ) ( xcoord ?x ) ( ycoord ?y ) ) ( <= ( distinctCell ?x1 ?y1 ?x2 ?y2 ) ( cell ?x1 ?y1 ) ( cell ?x2 ?y2 ) ( distinct ?x1 ?x2 ) ) ( <= ( distinctCell ?x1 ?y1 ?x2 ?y2 ) ( cell ?x1 ?y1 ) ( cell ?x2 ?y2 ) ( distinct ?y1 ?y2 ) ) ( opponent white black ) ( opponent black white ) ( <= ( base ( cell ?x ?y ?p ) ) ( cell ?x ?y ) ( role ?p ) ) ( <= ( base ( control ?p ) ) ( role ?p ) ) ( <= ( input ?p noop ) ( role ?p ) ) ( <= ( input ?p ( move ?x1 ?y1 ?x2 ?y2 ) ) ( xcoord ?x ) ( forward ?p ?y1 ?ymiddle ) ( forward ?p ?ymiddle ?y2 ) ( neighbor ?x1 ?x2 ) ) ( <= ( input ?p ( move ?x1 ?y1 ?x2 ?y2 ) ) ( xcoord ?x ) ( forward ?p ?y1 ?y2 ) ( secondneighbor ?x1 ?x2 ) ) ( <= ( input ?p ( move ?x1 ?y1 ?x2 ?y2 ) ) ( neighbor ?x1 ?x2 ) ( forward ?p ?y1 ?y2 ) ) ( <= ( init ( cell ?x 1 white ) ) ( xcoord ?x ) ) ( <= ( init ( cell ?x 2 white ) ) ( xcoord ?x ) ) ( <= ( init ( cell ?x ?y black ) ) ( xcoord ?x ) ( height ?y ) ) ( <= ( init ( cell ?x ?y black ) ) ( xcoord ?x ) ( height ?h ) ( succ ?y ?h ) ) ( init ( control white ) ) ( <= ( cellEmpty ?x ?y ) ( cell ?x ?y ) ( not ( true ( cell ?x ?y white ) ) ) ( not ( true ( cell ?x ?y black ) ) ) ) ( <= ( legal ?p ( move ?x1 ?y1 ?x2 ?y2 ) ) ( true ( control ?p ) ) ( true ( cell ?x1 ?y1 ?p ) ) ( forward ?p ?y1 ?ymiddle ) ( forward ?p ?ymiddle ?y2 ) ( neighbor ?x1 ?x2 ) ( cellEmpty ?x2 ?y2 ) ) ( <= ( legal ?p ( move ?x1 ?y1 ?x2 ?y2 ) ) ( true ( control ?p ) ) ( true ( cell ?x1 ?y1 ?p ) ) ( forward ?p ?y1 ?y2 ) ( secondneighbor ?x1 ?x2 ) ( cellEmpty ?x2 ?y2 ) ) ( <= ( legal ?p ( move ?x1 ?y1 ?x2 ?y2 ) ) ( true ( control ?p ) ) ( true ( cell ?x1 ?y1 ?p ) ) ( forward ?p ?y1 ?y2 ) ( neighbor ?x1 ?x2 ) ( opponent ?p ?p2 ) ( true ( cell ?x2 ?y2 ?p2 ) ) ) ( <= ( legal ?p noop ) ( role ?p ) ( not ( true ( control ?p ) ) ) ) ( <= ( next ( cell ?x2 ?y2 ?player ) ) ( does ?player ( move ?x1 ?y1 ?x2 ?y2 ) ) ) ( <= ( next ( cell ?x3 ?y3 ?state ) ) ( true ( cell ?x3 ?y3 ?state ) ) ( does ?player ( move ?x1 ?y1 ?x2 ?y2 ) ) ( distinctCell ?x1 ?y1 ?x3 ?y3 ) ( distinctCell ?x2 ?y2 ?x3 ?y3 ) ) ( <= ( next ( control ?p ) ) ( true ( control ?p2 ) ) ( opponent ?p ?p2 ) ) ( <= ( wins white ) ( height ?h ) ( true ( cell ?x ?h white ) ) ) ( <= ( wins black ) ( true ( cell ?x 1 black ) ) ) ( <= ( goal ?p 100 ) ( wins ?p ) ) ( <= ( goal ?p 50 ) ( role ?p ) ( not ( wins white ) ) ( not ( wins black ) ) ) ( <= ( goal ?p 0 ) ( opponent ?p ?p2 ) ( wins ?p2 ) ) ( <= ( any_legal_move ?p ) ( legal ?p ?m ) ) ( <= terminal ( wins ?someone ) ) ( <= terminal ( true ( control ?p ) ) ( not ( any_legal_move ?p ) ) ) ( <= ( init ( width ?w ) ) ( width ?w ) ) ( <= ( init ( height ?h ) ) ( height ?h ) ) ( <= ( next ( width ?w ) ) ( width ?w ) ) ( <= ( next ( height ?h ) ) ( height ?h ) ) ( width 10 ) ( height 10 ) ) 30 10)
+LOG 1675523685123 [L9]: <ERR> Got start message while already busy playing a game: ignoring.
+LOG 1675523685125 [L0]: [Sent at 1675523685125] busy
+LOG 1675523685143 [L0]: [Received at 1675523685142] ( PLAY kiosk.knightthrough_10x10-1675523685102 NIL )
+LOG 1675523685144 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685146 [L0]: [Sent at 1675523685146] busy
+LOG 1675523685177 [L0]: [Received at 1675523685176] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 10 1 9 3 ) noop ) )
+LOG 1675523685178 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685180 [L0]: [Sent at 1675523685180] busy
+LOG 1675523685200 [L0]: [Received at 1675523685200] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 8 10 7 8 ) ) )
+LOG 1675523685201 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685203 [L0]: [Sent at 1675523685203] busy
+LOG 1675523685216 [L0]: [Received at 1675523685215] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 1 1 2 3 ) noop ) )
+LOG 1675523685217 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685218 [L0]: [Sent at 1675523685218] busy
+LOG 1675523685238 [L0]: [Received at 1675523685237] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 7 9 6 7 ) ) )
+LOG 1675523685239 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685240 [L0]: [Sent at 1675523685240] busy
+LOG 1675523685257 [L0]: [Received at 1675523685256] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 4 2 5 4 ) noop ) )
+LOG 1675523685258 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685260 [L0]: [Sent at 1675523685260] busy
+LOG 1675523685274 [L0]: [Received at 1675523685273] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 6 10 5 8 ) ) )
+LOG 1675523685275 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685278 [L0]: [Sent at 1675523685277] busy
+LOG 1675523685288 [L0]: [Received at 1675523685288] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 6 1 4 2 ) noop ) )
+LOG 1675523685290 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685292 [L0]: [Sent at 1675523685291] busy
+LOG 1675523685312 [L0]: [Received at 1675523685311] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 10 9 9 7 ) ) )
+LOG 1675523685313 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685315 [L0]: [Sent at 1675523685315] busy
+LOG 1675523685330 [L0]: [Received at 1675523685329] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 5 1 4 3 ) noop ) )
+LOG 1675523685331 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685333 [L0]: [Sent at 1675523685333] busy
+LOG 1675523685345 [L0]: [Received at 1675523685344] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 9 9 10 7 ) ) )
+LOG 1675523685346 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685348 [L0]: [Sent at 1675523685348] busy
+LOG 1675523685357 [L0]: [Received at 1675523685356] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 9 2 10 4 ) noop ) )
+LOG 1675523685358 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685359 [L0]: [Sent at 1675523685359] busy
+LOG 1675523685388 [L0]: [Received at 1675523685387] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 4 9 5 7 ) ) )
+LOG 1675523685389 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685391 [L0]: [Sent at 1675523685391] busy
+LOG 1675523685401 [L0]: [Received at 1675523685400] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 5 4 7 5 ) noop ) )
+LOG 1675523685402 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685403 [L0]: [Sent at 1675523685403] busy
+LOG 1675523685417 [L0]: [Received at 1675523685417] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 2 10 1 8 ) ) )
+LOG 1675523685418 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685419 [L0]: [Sent at 1675523685419] busy
+LOG 1675523685429 [L0]: [Received at 1675523685429] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 5 2 7 3 ) noop ) )
+LOG 1675523685430 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685432 [L0]: [Sent at 1675523685432] busy
+LOG 1675523685441 [L0]: [Received at 1675523685441] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 1 9 3 8 ) ) )
+LOG 1675523685443 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685444 [L0]: [Sent at 1675523685444] busy
+LOG 1675523685455 [L0]: [Received at 1675523685454] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 1 2 2 4 ) noop ) )
+LOG 1675523685457 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685459 [L0]: [Sent at 1675523685459] busy
+LOG 1675523685468 [L0]: [Received at 1675523685467] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 1 8 3 7 ) ) )
+LOG 1675523685469 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685472 [L0]: [Sent at 1675523685472] busy
+LOG 1675523685481 [L0]: [Received at 1675523685480] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 10 4 9 6 ) noop ) )
+LOG 1675523685482 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685483 [L0]: [Sent at 1675523685483] busy
+LOG 1675523685494 [L0]: [Received at 1675523685493] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 3 9 4 7 ) ) )
+LOG 1675523685495 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685496 [L0]: [Sent at 1675523685496] busy
+LOG 1675523685507 [L0]: [Received at 1675523685506] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 2 4 1 6 ) noop ) )
+LOG 1675523685508 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685510 [L0]: [Sent at 1675523685510] busy
+LOG 1675523685527 [L0]: [Received at 1675523685526] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 5 8 4 6 ) ) )
+LOG 1675523685528 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685529 [L0]: [Sent at 1675523685529] busy
+LOG 1675523685542 [L0]: [Received at 1675523685542] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 9 3 7 4 ) noop ) )
+LOG 1675523685543 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685545 [L0]: [Sent at 1675523685545] busy
+LOG 1675523685556 [L0]: [Received at 1675523685556] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 3 7 5 6 ) ) )
+LOG 1675523685557 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685559 [L0]: [Sent at 1675523685559] busy
+LOG 1675523685573 [L0]: [Received at 1675523685573] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 6 2 8 3 ) noop ) )
+LOG 1675523685574 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685576 [L0]: [Sent at 1675523685576] busy
+LOG 1675523685584 [L0]: [Received at 1675523685584] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 5 10 3 9 ) ) )
+LOG 1675523685586 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685587 [L0]: [Sent at 1675523685587] busy
+LOG 1675523685599 [L0]: [Received at 1675523685598] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 8 2 9 4 ) noop ) )
+LOG 1675523685600 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685601 [L0]: [Sent at 1675523685601] busy
+LOG 1675523685613 [L0]: [Received at 1675523685612] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 7 10 8 8 ) ) )
+LOG 1675523685614 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685616 [L0]: [Sent at 1675523685616] busy
+LOG 1675523685627 [L0]: [Received at 1675523685627] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 7 4 5 5 ) noop ) )
+LOG 1675523685628 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685630 [L0]: [Sent at 1675523685630] busy
+LOG 1675523685640 [L0]: [Received at 1675523685640] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 4 6 5 5 ) ) )
+LOG 1675523685642 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685643 [L0]: [Sent at 1675523685643] busy
+LOG 1675523685653 [L0]: [Received at 1675523685653] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 4 1 3 3 ) noop ) )
+LOG 1675523685654 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685656 [L0]: [Sent at 1675523685656] busy
+LOG 1675523685665 [L0]: [Received at 1675523685664] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 6 9 7 7 ) ) )
+LOG 1675523685666 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685667 [L0]: [Sent at 1675523685667] busy
+LOG 1675523685677 [L0]: [Received at 1675523685677] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 7 2 9 3 ) noop ) )
+LOG 1675523685678 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685680 [L0]: [Sent at 1675523685680] busy
+LOG 1675523685688 [L0]: [Received at 1675523685687] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 7 7 6 5 ) ) )
+LOG 1675523685689 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685690 [L0]: [Sent at 1675523685690] busy
+LOG 1675523685706 [L0]: [Received at 1675523685705] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 2 2 1 4 ) noop ) )
+LOG 1675523685707 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685708 [L0]: [Sent at 1675523685708] busy
+LOG 1675523685723 [L0]: [Received at 1675523685722] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 1 10 2 8 ) ) )
+LOG 1675523685724 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685726 [L0]: [Sent at 1675523685726] busy
+LOG 1675523685737 [L0]: [Received at 1675523685736] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 1 4 2 6 ) noop ) )
+LOG 1675523685738 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685739 [L0]: [Sent at 1675523685739] busy
+LOG 1675523685755 [L0]: [Received at 1675523685755] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 2 9 1 7 ) ) )
+LOG 1675523685757 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685758 [L0]: [Sent at 1675523685758] busy
+LOG 1675523685768 [L0]: [Received at 1675523685767] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 2 6 1 7 ) noop ) )
+LOG 1675523685769 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685770 [L0]: [Sent at 1675523685770] busy
+LOG 1675523685783 [L0]: [Received at 1675523685783] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 5 6 6 4 ) ) )
+LOG 1675523685784 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685786 [L0]: [Sent at 1675523685786] busy
+LOG 1675523685797 [L0]: [Received at 1675523685796] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 9 6 10 8 ) noop ) )
+LOG 1675523685798 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685799 [L0]: [Sent at 1675523685799] busy
+LOG 1675523685813 [L0]: [Received at 1675523685813] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 9 7 7 6 ) ) )
+LOG 1675523685814 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685816 [L0]: [Sent at 1675523685816] busy
+LOG 1675523685828 [L0]: [Received at 1675523685828] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 4 3 3 5 ) noop ) )
+LOG 1675523685829 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685830 [L0]: [Sent at 1675523685830] busy
+LOG 1675523685840 [L0]: [Received at 1675523685840] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 5 5 4 3 ) ) )
+LOG 1675523685842 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685843 [L0]: [Sent at 1675523685843] busy
+LOG 1675523685856 [L0]: [Received at 1675523685855] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 3 1 1 2 ) noop ) )
+LOG 1675523685857 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685859 [L0]: [Sent at 1675523685859] busy
+LOG 1675523685873 [L0]: [Received at 1675523685872] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 4 10 6 9 ) ) )
+LOG 1675523685874 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685875 [L0]: [Sent at 1675523685875] busy
+LOG 1675523685888 [L0]: [Received at 1675523685887] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 9 1 10 3 ) noop ) )
+LOG 1675523685889 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685891 [L0]: [Sent at 1675523685891] busy
+LOG 1675523685902 [L0]: [Received at 1675523685901] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 3 8 4 6 ) ) )
+LOG 1675523685902 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685904 [L0]: [Sent at 1675523685904] busy
+LOG 1675523685915 [L0]: [Received at 1675523685914] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 1 7 2 9 ) noop ) )
+LOG 1675523685916 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685918 [L0]: [Sent at 1675523685918] busy
+LOG 1675523685928 [L0]: [Received at 1675523685928] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 7 8 6 6 ) ) )
+LOG 1675523685930 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685931 [L0]: [Sent at 1675523685931] busy
+LOG 1675523685940 [L0]: [Received at 1675523685940] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 3 5 5 6 ) noop ) )
+LOG 1675523685941 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685942 [L0]: [Sent at 1675523685942] busy
+LOG 1675523685951 [L0]: [Received at 1675523685951] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 5 7 3 6 ) ) )
+LOG 1675523685953 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685954 [L0]: [Sent at 1675523685954] busy
+LOG 1675523685964 [L0]: [Received at 1675523685964] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 8 1 6 2 ) noop ) )
+LOG 1675523685965 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685966 [L0]: [Sent at 1675523685966] busy
+LOG 1675523685975 [L0]: [Received at 1675523685975] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 8 9 7 7 ) ) )
+LOG 1675523685976 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685977 [L0]: [Sent at 1675523685977] busy
+LOG 1675523685985 [L0]: [Received at 1675523685985] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 8 3 10 4 ) noop ) )
+LOG 1675523685987 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685988 [L0]: [Sent at 1675523685988] busy
+LOG 1675523685995 [L0]: [Received at 1675523685995] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 6 6 7 4 ) ) )
+LOG 1675523685996 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523685997 [L0]: [Sent at 1675523685997] busy
+LOG 1675523686004 [L0]: [Received at 1675523686004] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 7 3 8 5 ) noop ) )
+LOG 1675523686005 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523686007 [L0]: [Sent at 1675523686007] busy
+LOG 1675523686013 [L0]: [Received at 1675523686013] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 7 6 8 5 ) ) )
+LOG 1675523686014 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523686015 [L0]: [Sent at 1675523686015] busy
+LOG 1675523686028 [L0]: [Received at 1675523686028] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 9 4 8 6 ) noop ) )
+LOG 1675523686029 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523686030 [L0]: [Sent at 1675523686030] busy
+LOG 1675523686037 [L0]: [Received at 1675523686036] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 6 7 5 5 ) ) )
+LOG 1675523686038 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523686039 [L0]: [Sent at 1675523686039] busy
+LOG 1675523686047 [L0]: [Received at 1675523686046] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 10 4 9 6 ) noop ) )
+LOG 1675523686048 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523686049 [L0]: [Sent at 1675523686049] busy
+LOG 1675523686057 [L0]: [Received at 1675523686057] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 10 7 9 5 ) ) )
+LOG 1675523686058 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523686059 [L0]: [Sent at 1675523686059] busy
+LOG 1675523686066 [L0]: [Received at 1675523686066] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 10 8 8 9 ) noop ) )
+LOG 1675523686067 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523686068 [L0]: [Sent at 1675523686068] busy
+LOG 1675523686077 [L0]: [Received at 1675523686076] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 8 5 10 4 ) ) )
+LOG 1675523686078 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523686079 [L0]: [Sent at 1675523686079] busy
+LOG 1675523686086 [L0]: [Received at 1675523686085] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 6 2 8 3 ) noop ) )
+LOG 1675523686087 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523686088 [L0]: [Sent at 1675523686088] busy
+LOG 1675523686102 [L0]: [Received at 1675523686102] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 6 5 5 3 ) ) )
+LOG 1675523686103 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523686104 [L0]: [Sent at 1675523686104] busy
+LOG 1675523686110 [L0]: [Received at 1675523686109] ( PLAY kiosk.knightthrough_10x10-1675523685102 (( move 3 3 5 4 ) noop ) )
+LOG 1675523686111 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523686112 [L0]: [Sent at 1675523686112] busy
+LOG 1675523686117 [L0]: [Received at 1675523686117] ( PLAY kiosk.knightthrough_10x10-1675523685102 (noop ( move 6 9 4 8 ) ) )
+LOG 1675523686118 [L9]: <ERR> Got play message not intended for current game: ignoring.
+LOG 1675523686119 [L0]: [Sent at 1675523686119] busy
+LOG 1675523686127 [L0]: [Received at 1675523686127] ( STOP kiosk.knightthrough_10x10-1675523685102 (( move 2 9 3 10 ) noop ) )
+LOG 1675523686129 [L9]: <ERR> Got stop message not intended for current game: ignoring.
+LOG 1675523686131 [L0]: [Sent at 1675523686131] busy
